@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> RESTful Interface </title>
+		<meta charset="UTF-8"/>
+		<link href="rest.css" type="text/css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<h1>RESTful Interface</h1>
+		<table>
+		<thead>
+			<tr>
+				<th>Method </th>
+				<th>URL Form </th>
+				<th>Parameter </th>
+				<th>Return Result </th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>POST</td>
+				<td>Customer.php</td>
+				<td><ul>
+						<li>first</li>
+						<li>last</li>
+						<li>SSN</li>
+						<li>DOB</li>
+						<li>address</li>
+						<li>account</li>
+						<li>routing</li>
+						<li>email</li>
+						<li>username</li>
+						<li>password</li>
+						<li>initBalance</li>
+					</ul>
+				</td>
+				<td>TRUE</td>
+				<td>Add the customer to the Customer table in the database. Error 412 Precondition Failed if initBalance<0. </td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>Customer.php</td>
+				<td><ul>
+						<li>delete (value is not used)</li>
+						<li>first</li>
+						<li>last</li>
+						<li>DOB</li>
+						<li>SSN</li>
+					</ul>
+				</td>
+				<td>TRUE</td>
+				<td>Delete the specified customer. Error 404 Not Found is generated if the customer is not found. First call would delete the resource and subsequent call to the same URL would generate Error 404 Not Found. </td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Customer.php</td>
+				<td><ul>
+						<li>oldUser</li>
+						<li>oldPass</li>
+						<li>newUser</li>
+						<li>newPass</li>
+						<li>email</li>
+						<li>address</li>
+					</ul>
+				</td>
+				<td>Customer Object (see below)</td>
+				<td>Update the info for customer specified by the oldUser and oldPass. Error 404 Not Found if the information is incorrect.</td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>Customer.php</td>
+				<td><ul>
+						<li>Username</li>
+						<li>Password</li>
+					</ul>
+				</td>
+				<td>Interger</td>
+				<td>Return the id of the specified customer. Error 404 Not Found if the login informaiton is incorrect</td>
+			</tr>
+			
+			<tr>
+				<td>POST</td>
+				<td>Transaction.php</td>
+				<td><ul>
+						<li>account</li>
+						<li>routing</li>
+						<li>day</li>
+						<li>amount</li> 
+						<li>type (credit/debit)</li>
+					</ul>
+				</td>
+				<td>TRUE</td>
+				<td>Add the transaction to the specified customer.  Error 404 Not Found is generated if the customer is not found. Error 412 Precondition Failed is generated if the type is debit and the amount is greater than the balance.</td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>Transaction.php</td>
+				<td><ul>
+					<li>Username</li>
+					<li>Password</li>
+				    </ul>
+				</td>
+				<td>Array of transaction objects</td>
+				<td>Get all the transactions belonging to the customer specified by the id.</td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>Employee.php</td>
+				<td><ul>
+						<li>Username</li>
+						<li>Password</li>
+					</ul>
+				</td>
+				<td>Integer</td>
+				<td>Return the id of the specified employee. Error 404 Not Found if login information is incorrect</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Employee.php</td>
+				<td><ul>
+						<li>oldUser</li>
+						<li>oldPass</li>
+						<li>newUser</li>
+						<li>newPass</li>
+					</ul>
+				</td>
+				<td> TRUE </td>
+				<td> Update the login informaiton for the employee specified by oldUse and oldPass. Error 404 Not Found if the information is incorrect. </td>
+			</tr>
+				
+		</tbody>
+		</table>
+		<h2>Customer Object is JSON encoded as </h2>
+		<blockquote>
+			{id: integer <br>
+			 first: string <br>
+			 last: string <br>
+			 SSN<br>
+			 DOB<br>
+			 address<br>
+			 account<br>
+			 routing<br>
+			 email<br>
+			 username<br>
+			 password<br>
+			 initBalance<br>
+			}
+		</blockquote>
+			 
+		<h1>DataBase Design Layout </h1> 
+		<a href="DataBaseDesign.txt" target="_blank">DataBase Design </a>
+	</body>
+</html>
+
+
+
+
+
+
+				

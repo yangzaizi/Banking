@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Login Page </title>
+		<meta charset="UTF-8"/>
+		<link href="BankCSS.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="http://www.cs.unc.edu/Courses/comp426-f12/jquery-1.8.1.js"></script>
+		<script type="text/javascript" src="../Javascript/Login.js"></script>
+	</head>
+
+	<body class="login">
+		<div id="LoginPage">
+			<fieldset>
+				<legend> Login </legend>
+				<form id="login">
+					<img src="lock.png" id="lock" alt="signin"/><br>
+					<label>Username <input type="text"  name="Username" ></label><br>
+					<label>Password <input type="password" name="Password" ></label><br>
+					<Label> Level
+						<select name="level">
+							<option value="Customer">Customer</option>
+							<option value="Employee">Employee</option>
+						</select>
+					</label>
+					<input type="submit" value="Login"> </input>
+				</form>
+			</fieldset>
+		</div>
+	</body>
+</html>

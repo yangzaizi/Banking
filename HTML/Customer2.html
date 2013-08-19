@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<HTML>
+	<head> 
+		<title> Customer </title>
+		<meta charset="UTF-8"/>
+		<link href="BankCSS.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="http://www.cs.unc.edu/Courses/comp426-f12/jquery-1.8.1.js"></script>
+		<script type="text/javascript" src="../Javascript/CustomerC.js"></script>
+		
+	</head>
+	
+	<body class="customer">
+		<div id="signout">
+			<form id="logout">
+			<button type="submit" name="signout"> Logout </button>
+			</form>
+		</div>
+		<br>
+		<div class="wrapper">
+		<div id= "Transfer" class="forms">
+			<form id="transfer">
+				<fieldset>
+					<legend> Transfer </legend>
+					<label> Account# Destination<input type="text" name="account"> </label><br>
+					<label> Routing# Destination<input type="text" name="routing"> </label>
+					<label> Date <input type="date" name="day"> </label><br>
+					<label> Amount <input type="text" name="amount"> </label><br>
+					<button type="submit" name="create"> Submit </button>
+				</fieldset>
+			</form>
+		</div>
+		<div id= "EditProfile" class="forms">
+			<form id="edit">
+				<fieldset>
+					<legend> Edit Profile </legend>
+					<label> Email: <input type="email" name="email"> </label><br>
+					<label> Old User Name <input type="text" name="oldUser"> </label><br>
+					<label> Old Password <input type="password" name="oldPass"> </label><br>
+					<label> New User Name <input type="text" name="newUser"> </label><br>
+					<label> New Password <input type="password" name="newPass"> </label><br>
+					<label> Confirm New Password <input type="password" name="cNewPass"> </label><br>
+					<label> Address <input type="text" name="address"> </label><br>
+					<button type="submit" name="create"> Update </button>
+				</fieldset>
+			</form>
+		</div>
+		
+		<div id="AccountHistory">
+			<fieldset>
+				<legend> Account History </legend>
+				<button name="sort"> Sort </button>
+				<select id="sort"> 
+					<option value="Date">Date</option>
+					<option value="Amount">Amount</option>
+				</select>
+				<select id="order">
+					<option value="Increasing">Increasing </option>
+					<option value="Decreasing">Decreasing </option>
+				</select>
+			<table id="account">
+				<tr>
+					<td>
+						<table id="Header">
+							<tr>
+								<th> Date </th>
+								<th> Type </th>
+								<th> Amount </th>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="DataContainer">
+							<table id="data">	
+							</table>  
+						</div>
+					</td>
+				</tr>
+			</table>
+			</fieldset>
+		</div>
+		</div>		
+	</body>
+</HTML>

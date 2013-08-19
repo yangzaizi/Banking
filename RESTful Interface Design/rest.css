@@ -1,0 +1,6 @@
+tr:nth-child(2n){background-color: #aaaaff;}
+td, th{text-align: left;
+   border: 2px solid black;
+   padding: 2px;
+   }
+a{font-size: 20px;}

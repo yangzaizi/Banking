@@ -1,0 +1,77 @@
+form > button{float: right;
+         clear: both;
+		 margin-right: 15px;
+		 }
+
+button:hover{
+			cursor: auto;
+			}
+		 
+button:hover{color: #665544;}
+ 
+fieldset  {border: 3px solid #CC3300;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+		border-bottom-left-radius: 15px;
+		border-top-left-radius: 15px;
+	   }
+
+table#AccountHistory{padding: 0px;
+				   border: 0px;
+				   width: 275px;
+				   
+			        }
+table#Header{padding: 1px;
+			border: 1px;
+			width: 270px;
+			text-align: center;
+			margin-left: 5px;
+			}
+			
+div#DataContainer{width: 275px;
+		height: 60px;
+		overflow: auto;
+		margin-right: 11px;
+		}
+		
+table#data{padding: 1px;
+		  border: 1px solid #990000;
+		  width: 250px;
+		  text-align: left;
+		  }
+		  
+input{margin: 2px;}
+
+.wrapper{margin:50px auto 50px auto;
+		 margin-top: 230px;
+		 text-align: left;
+		}
+
+div#CreateAccount,div#AddTransaction,div#DeleteAccount, div#Update{float: left; 
+									margin-bottom: 15px; 
+									margin-left: 250px;
+									clear: bottom;
+									}
+									
+fieldset > legend, div label{font-family: Georgia, Times, serif;}
+
+div#Transfer, div#EditProfile, div#AccountHistory{float: left;
+							                    margin-bottom: 15px;
+							                    margin-left: 200px;
+							                   }
+			
+img#lock {width:50px; height:50px;}
+
+div#LoginPage > fieldset {display: inline;
+					  margin-left: 480px;
+					  margin-top: 230px;
+					  }
+
+body.employee, body.customer, body.login{margin: 25px 0px 25px auto;
+										background: url("bank.png");
+										background-repeat: no-repeat;
+										background-position: left top;
+										}
+
+
+

@@ -1,0 +1,46 @@
+Customer
+	
+	Id: INT, primary key, AUTO INCREMENT
+	First: char(25), first name
+	Last: char(25), last name
+	DOB: DATE, date of birth
+	SSN: char(9), Social Security Number
+	Address: TEXT
+	Account: char(10), account #
+	Routing: char(10), routing #
+	Balance: Decimal(20,4), balance of the customer
+	UserName: char(20), user name
+	PassWord: char(20), password
+	
+
+Transaction
+
+	Id: INT, primary key, AUTO INCREMENT
+	Amount: Decimal(20,4), transaction amount
+	Type: char(5), transaction type (credit or debit)
+	DateID: a foreign key to TransactionDate Table
+	
+
+Employee
+
+	Id: INT, primary key, AUTO INCREMENT
+	UserName: VARCHAR(20), user name
+	PassWord: VARCHAR(20), password
+
+	
+CustomerTransactionDate
+	
+	id: INT, primary key, AUTO INCREMENT
+	CustomerID: foreign key to Customer Table
+	DateID:  foreign key to TransactionDate Table
+	
+TransactionDate
+
+	id: INT, primary key, AUTO INCREMENT
+	Date: DATE, date of transaction
+
+Note: 
+	1)Many to many relationship between customer and transaction date
+           
+	2)One to many relationship between transaction date and transaction
+	  And one to many relationship between customer and transaction (indirectly)
